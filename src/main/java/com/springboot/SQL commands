@@ -4,3 +4,9 @@ CREATE TABLE users (
     password VARCHAR(256) NOT NULL,
     enabled TINYINT(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO users (user_id, username, password, enabled) VALUES 
+	('1', 'monish@example.com', '$2a$10$D4OLKI6yy68crm.3imC9X.P2xqKHs5TloWUcr6z5XdOqnTrAK84ri', true),
+	('2', 'naveen@example.com', '$2a$10$D4OLKI6yy68crm.3imC9X.P2xqKHs5TloWUcr6z5XdOqnTrAK84ri', true),
+	('3', 'vijay@example.com', '$2a$10$D4OLKI6yy68crm.3imC9X.P2xqKHs5TloWUcr6z5XdOqnTrAK84ri', true);
+    
