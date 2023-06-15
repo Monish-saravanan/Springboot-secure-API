@@ -1,0 +1,11 @@
+// Let’s try accessing some protected resource without authentication first:
+
+curl -X POST --user 'gigy:secret' -d 'grant_type=password&username=peter@example.com&password=password' http://localhost:8000/gigy/oauth/token
+
+// The following response with  access and refresh tokens will be produced:
+
+{"access_token":"27c1d964-fcad-470f-b32b-219c662e6099","token_type":"bearer","refresh_token":"d7fe669c-cf46-46ee-b790-a9ef39ea7e63","expires_in":3599,"scope":"read write"}
+
+// Now  try to access the protected endpoint with our access token in the request headers will be :
+
+curl -i -H "Accept: application/json" -H "Authorization: Bearer $TOKEN" -X GET http://localhost:8000/gigy/people
